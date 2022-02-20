@@ -1,0 +1,22 @@
+<ng-container *ngFor="let t of topics; let i = index">
+  <br *ngIf="i > 0">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title [innerHtml]="(i + 1) + '. ' + t.title"></mat-card-title>
+      <mat-card-subtitle>{{t.subtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content [routerLink]="[t.link]">
+      <img src="{{t.imageLink}}"
+           alt=""
+           srcset=""
+           width="100%">
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- {{t.link}} -->
+      <button mat-button
+              [routerLink]="[t.link]"
+              mat-raised-button>Go To Example</button>
+    </mat-card-actions>
+  </mat-card>
+
+</ng-container>

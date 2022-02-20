@@ -3,6 +3,7 @@
   "projects": {
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
+    "backend-data-into-template": "libs/backend-data-into-template",
     "codete": "apps/codete",
     "codete-e2e": "apps/codete-e2e"
   }

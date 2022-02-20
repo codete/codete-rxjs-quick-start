@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@codete-rxjs/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@codete-rxjs/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@codete-rxjs/backend-data-into-template": [
+        "libs/backend-data-into-template/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
