@@ -1,5 +1,7 @@
 
 
+<p style="text-align: center;"><img src="./baner.jpeg" ></p>
+
 # CodeteRxjs
 
 This project was generated using [Nx](https://nx.dev).
