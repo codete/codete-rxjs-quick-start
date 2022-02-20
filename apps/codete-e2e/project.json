@@ -1,0 +1,28 @@
+{
+  "root": "apps/codete-e2e",
+  "sourceRoot": "apps/codete-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/codete-e2e/cypress.json",
+        "devServerTarget": "codete:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "codete:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/codete-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["codete"]
+}
