@@ -1,0 +1,30 @@
+Authors:
+<mat-card>
+  <ul>
+    <li *ngFor="let author of (authors$ | async)">
+      {{author.name}}
+    </li>
+  </ul>
+</mat-card>
+
+Books:
+<mat-card>
+  <ul *ngIf="books$ | async; else elseLoadingTemplate; let books">
+    <li *ngFor="let book of books">
+      {{book.title}}
+    </li>
+  </ul>
+</mat-card>
+<ng-template #elseLoadingTemplate>
+  loading books...
+</ng-template>
+
+
+Authors with at least two book:
+<mat-card>
+  <ul>
+    <li *ngFor="let author of (authorsWithAtLeastOneBook$ | async)">
+      {{author.name}}
+    </li>
+  </ul>
+</mat-card>

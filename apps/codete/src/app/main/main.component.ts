@@ -9,13 +9,14 @@ import { Topic } from '@codete-rxjs/api-interfaces';
 export class MainComponent implements OnInit {
   topics: Topic[] = [
     {
-      title: 'RXJS: using with http client to get <b>backend data</b> straight <b>into</b> angular <b>template</b>',
-      subtitle: 'async pipe in angular template vs .pipe() function for rxjs operators',
+      title: 'Using with http client to get <b>backend data</b> straight <b>into</b> angular <b>template</b>.',
+      subtitle: 'asdasync pipe in angular template vs .pipe() function for rxjs operators',
       imageLink: '/assets/backend-data-into-template.jpeg',
       link: '/backend-data-into-template'
     },
     {
-      title: 'Rxjs playing with “hot” and “cold” observables',
+      title: 'Playing with “hot” and “cold” observables',
+      subtitle: 'Subject, BehavioralSubject and rxjs operators fromEvent, timer, interval',
       imageLink: '/assets/backend-data-into-template.jpeg',
       link: '/'
     }

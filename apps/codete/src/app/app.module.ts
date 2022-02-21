@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'backend-data-into-template',
     loadChildren: () => import(`@codete-rxjs/backend-data-into-template`)
-      .then(m => m.BackendDataIntoTemplateExampleModule),
+      .then(m => m.BackendDataIntoTemplateModule),
   }
 ];
 

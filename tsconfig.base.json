@@ -18,7 +18,8 @@
       "@codete-rxjs/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@codete-rxjs/backend-data-into-template": [
         "libs/backend-data-into-template/src/index.ts"
-      ]
+      ],
+      "@codete-rxjs/shared-ui": ["libs/shared-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

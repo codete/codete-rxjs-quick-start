@@ -3,10 +3,16 @@ export interface Message {
 }
 
 
+export interface Book {
+  id: number;
+  title: string;
+  soldCopies?: number;
+}
+
 export interface Author {
+  id: number;
   name: string;
-  surname: string;
-  books?: number[];
+  books: (Book | number)[];
 }
 
 export interface Topic {
