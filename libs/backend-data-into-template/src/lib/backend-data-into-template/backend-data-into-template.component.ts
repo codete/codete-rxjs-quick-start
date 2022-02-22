@@ -21,10 +21,10 @@ export class BackendDataIntoTemplateComponent implements OnInit {
   );
 
   authorsWithAtLeastOneBook$ = this.authors$.pipe(
-    filter( f => true ),
     map(authors => {
       return authors.filter(({ books }) => books.length >= 2)
-    })
+    }),
+    tap(console.log)
   );
 
   ngOnInit() {

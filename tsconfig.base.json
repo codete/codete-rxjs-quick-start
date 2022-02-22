@@ -19,6 +19,9 @@
       "@codete-rxjs/backend-data-into-template": [
         "libs/backend-data-into-template/src/index.ts"
       ],
+      "@codete-rxjs/hot-and-cold-observables": [
+        "libs/hot-and-cold-observables/src/index.ts"
+      ],
       "@codete-rxjs/shared-ui": ["libs/shared-ui/src/index.ts"]
     }
   },

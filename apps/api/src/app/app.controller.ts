@@ -23,5 +23,10 @@ export class AppController {
     return this.appService.getBooks();
   }
 
+  @Get('hamsters/names')
+  getHamster() {
+    return this.appService.getHamsterNames();
+  }
+
 
 }

@@ -6,6 +6,7 @@
     "backend-data-into-template": "libs/backend-data-into-template",
     "codete": "apps/codete",
     "codete-e2e": "apps/codete-e2e",
+    "hot-and-cold-observables": "libs/hot-and-cold-observables",
     "shared-ui": "libs/shared-ui"
   }
 }

@@ -16,6 +16,11 @@ const routes: Routes = [
     path: 'backend-data-into-template',
     loadChildren: () => import(`@codete-rxjs/backend-data-into-template`)
       .then(m => m.BackendDataIntoTemplateModule),
+  },
+  {
+    path: 'hot-and-cold-observables',
+    loadChildren: () => import(`@codete-rxjs/hot-and-cold-observables`)
+      .then(m => m.HotAndColdObservablesModule),
   }
 ];
 

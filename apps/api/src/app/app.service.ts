@@ -44,6 +44,13 @@ const authors: Author[] = [
   },
 ];
 
+export const HamsersNamesArr: string[] = [
+  'Pluszka',
+  'Łapczuch',
+  'Chrupka',
+  'Misia',
+];
+
 
 @Injectable()
 export class AppService {
@@ -54,6 +61,10 @@ export class AppService {
 
   getBooks() {
     return books;
+  }
+
+  getHamsterNames() {
+    return HamsersNamesArr;
   }
 
   getData(): Message {

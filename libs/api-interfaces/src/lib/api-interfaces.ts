@@ -21,3 +21,8 @@ export interface Topic {
   imageLink?: string;
   link?: string;
 }
+
+export interface Hamster {
+  name: string;
+  weight: number;
+}

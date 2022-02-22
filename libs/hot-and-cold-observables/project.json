@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/hot-and-cold-observables",
+  "sourceRoot": "libs/hot-and-cold-observables/src",
+  "prefix": "codete-rxjs",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/hot-and-cold-observables"],
+      "options": {
+        "jestConfig": "libs/hot-and-cold-observables/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/hot-and-cold-observables/src/**/*.ts",
+          "libs/hot-and-cold-observables/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

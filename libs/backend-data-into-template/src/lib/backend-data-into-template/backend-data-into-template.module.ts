@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedUiModule } from '@codete-rxjs/shared-ui';
 
-
 const routes: Routes = [
   {
     path: '',
