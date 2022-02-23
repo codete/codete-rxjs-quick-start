@@ -17,6 +17,21 @@ export class MainComponent implements OnInit {
       title: 'Understanding <b>“hot and cold” observables</b>',
       imageLink: '/assets/backend-data-into-template.jpeg',
       link: '/hot-and-cold-observables'
+    },
+    {
+      title: 'Getting <b>list of ids</b>/hashes at being just  <b>to</b> get list of <b>full models</b> later',
+      imageLink: '/assets/backend-data-into-template.jpeg',
+      link: '/list-of-ids-to-full-models'
+    },
+    {
+      title: 'Handling <b>search results</b> and social <b>posts interactions</b> in rxjs',
+      imageLink: '/assets/backend-data-into-template.jpeg',
+      link: '/search-results-posts-interactions'
+    },
+    {
+      title: 'Reacting to multiple events in your application',
+      imageLink: '/assets/backend-data-into-template.jpeg',
+      link: '/multiple-events'
     }
   ]
 

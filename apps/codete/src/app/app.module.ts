@@ -19,8 +19,23 @@ const routes: Routes = [
   },
   {
     path: 'hot-and-cold-observables',
-    loadChildren: () => import(`@codete-rxjs/hot-and-cold-observables`)
+    loadChildren: () => import('@codete-rxjs/hot-and-cold-observables')
       .then(m => m.HotAndColdObservablesModule),
+  },
+  {
+    path: 'list-of-ids-to-full-models',
+    loadChildren: () => import('@codete-rxjs/list-of-ids-to-full-models')
+      .then(m => m.ListOfIdsToFullModelsModule),
+  },
+  {
+    path: 'search-results-posts-interactions',
+    loadChildren: () => import('@codete-rxjs/search-results-posts-interactions')
+      .then(m => m.SearchResultsPostsInteractionsModule),
+  },
+  {
+    path: 'multiple-events',
+    loadChildren: () => import('@codete-rxjs/multiple-events')
+      .then(m => m.MultipleEventsModule),
   }
 ];
 
