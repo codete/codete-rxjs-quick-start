@@ -22,7 +22,19 @@ export interface Topic {
   link?: string;
 }
 
+export type Grams = number;
+
 export interface Hamster {
   name: string;
-  weight: number;
+  weight: Grams;
+  id: number;
+}
+
+export interface HamsterOwner {
+  name: string;
+  hamsters: (number | Hamster)[];
+}
+
+export interface HamsterOwnerFull extends Omit<HamsterOwner, 'hamsters'> {
+  hamsters: Hamster[];
 }

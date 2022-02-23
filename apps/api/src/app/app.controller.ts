@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 
 import { Author, Message } from '@codete-rxjs/api-interfaces';
 
@@ -6,7 +6,7 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get('hello')
   getData() {
@@ -24,8 +24,28 @@ export class AppController {
   }
 
   @Get('hamsters/names')
-  getHamster() {
+  getHamstersNames() {
     return this.appService.getHamsterNames();
+  }
+
+  @Get('hamsters/ids')
+  getHamsterIds() {
+    return this.appService.getHamsterIds();
+  }
+
+  @Get('hamster/:id')
+  getHamsterById(@Param() params: { id: number; }) {
+    return this.appService.getHamsters().find(h => h.id === Number(params.id))
+  }
+
+  @Get('hamsters')
+  getHamsters() {
+    return this.appService.getHamsters();
+  }
+
+  @Get('hamsters/owners')
+  getHamstersOwners() {
+    return this.appService.getHamstersOwners();
   }
 
 

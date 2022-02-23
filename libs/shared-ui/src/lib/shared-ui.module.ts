@@ -1,26 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MatCardModule } from "@angular/material/card";
-import { MatInputModule } from "@angular/material/input";
-import { MatButtonModule } from "@angular/material/button";
-import { MatListModule } from "@angular/material/list";
-
-export const materialModules = [
-  MatCardModule,
-  MatInputModule,
-  MatButtonModule,
-  MatListModule,
-];
+import { HamsterModule } from './components/hamster/hamster.module';
+import { MaterialModule } from './material.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    ...materialModules
+    MaterialModule,
+    HamsterModule,
   ],
   exports: [
-    ...materialModules,
+    MaterialModule,
+    HamsterModule,
   ]
 })
 export class SharedUiModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Author, Book, Message } from '@codete-rxjs/api-interfaces';
+import { Author, Book, Hamster, HamsterOwner, Message } from '@codete-rxjs/api-interfaces';
 
 const books: Book[] = [
   {
@@ -44,12 +44,44 @@ const authors: Author[] = [
   },
 ];
 
-export const HamsersNamesArr: string[] = [
-  'Pluszka',
-  'Łapczuch',
-  'Chrupka',
-  'Misia',
+
+export const Hamsters: Hamster[] = [
+  {
+    id: 1000,
+    name: 'Pluszka',
+    weight: 90
+  },
+  {
+    id: 1001,
+    name: 'Misia',
+    weight: 70
+  },
+  {
+    id: 1002,
+    name: 'Chrupka',
+    weight: 90
+  },
+  {
+    id: 1003,
+    name: 'Łapczuch',
+    weight: 60
+  }
 ];
+
+export const HamstersOwners: HamsterOwner[] = [
+  {
+    name: 'Megan',
+    hamsters: [1002, 1003]
+  },
+  {
+    name: 'Natalie',
+    hamsters: [1000]
+  },
+  {
+    name: 'Victoria',
+    hamsters: [1001]
+  }
+]
 
 
 @Injectable()
@@ -64,7 +96,19 @@ export class AppService {
   }
 
   getHamsterNames() {
-    return HamsersNamesArr;
+    return Hamsters.map((h) => h.name);
+  }
+
+  getHamsters() {
+    return Hamsters;
+  }
+
+  getHamsterIds() {
+    return Hamsters.map(({ id }) => id);
+  }
+
+  getHamstersOwners() {
+    return HamstersOwners;
   }
 
   getData(): Message {

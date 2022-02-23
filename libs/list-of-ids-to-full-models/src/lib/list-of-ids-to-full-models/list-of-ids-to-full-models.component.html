@@ -1,3 +1,19 @@
-<p>
-  list-of-ids-to-full-models works!
-</p>
+<h2>
+  All hamsters
+</h2>
+<mat-card *ngFor="let hamster of (allHamsters$ | async)">
+  <app-hamster [hamster]="hamster"></app-hamster>
+</mat-card>
+
+<h2>
+  Owners and hamsters
+</h2>
+<mat-card *ngFor="let owner of (ownersWithHamsters$ | async)">
+  <h3> {{ owner.name }} </h3>
+  <h4>owned hamsters:</h4>
+  <ul>
+    <li *ngFor="let hamster of owner.hamsters">
+      <app-hamster [hamster]="hamster"></app-hamster>
+    </li>
+  </ul>
+</mat-card>
