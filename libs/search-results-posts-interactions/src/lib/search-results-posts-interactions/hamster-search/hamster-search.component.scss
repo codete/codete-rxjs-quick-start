@@ -2,3 +2,25 @@ mat-form-field {
   width: 80%;
   max-width: 400px;
 }
+
+mat-card {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.main {
+  width: calc(60% - 20px);
+  margin: 10px;
+}
+
+.side {
+  width: calc(40% - 20px);
+  margin: 10px;
+  ul {
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

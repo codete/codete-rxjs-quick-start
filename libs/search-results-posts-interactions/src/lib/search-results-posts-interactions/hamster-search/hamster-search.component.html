@@ -1,7 +1,40 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Type name of you little, chubby friend</mat-label>
-    <input matInput >
-  </mat-form-field>
+<mat-form-field class="example-full-width"
+                appearance="fill">
+  <mat-label>Type name of your little, chubby friend</mat-label>
+  <input matInput
+         #search>
+</mat-form-field>
 
-</form>
+
+<mat-card class="main">
+  <div *ngIf="searchResults$ | async; else loadingDataTemplate; let hamsters">
+    <ng-container *ngIf="hamsters.length > 0; else zeroHamsterTemplate">
+      <ng-container *ngFor="let hamster of hamsters">
+        <app-hamster [hamster]="hamster"></app-hamster>
+      </ng-container>
+    </ng-container>
+  </div>
+  <ng-template #zeroHamsterTemplate>
+    zero hamster to show
+  </ng-template>
+</mat-card>
+
+<ng-template #loadingDataTemplate>
+  <ng-container *ngIf="(typedWords$ | async); else elseTemplate; let typedWords">
+    <span *ngIf="typedWords.length > 0"> loading data from server</span>
+    <span *ngIf="typedWords.length === 0"
+          [ngTemplateOutlet]="elseTemplate"> </span>
+  </ng-container>
+  <ng-template #elseTemplate>
+    please type hamster name in the input above
+  </ng-template>
+</ng-template>
+
+
+
+<mat-card class="side">
+  <h4 class="title">Already typed words:</h4>
+  <ul #side>
+    <li *ngFor="let word of (typedWords$ | async)"> {{ word }} </li>
+  </ul>
+</mat-card>

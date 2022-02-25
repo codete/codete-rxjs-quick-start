@@ -6,7 +6,7 @@ import { combineLatestWith, delay, filter, map, share, tap } from 'rxjs';
 @Component({
   selector: 'app-backend-data-into-template',
   templateUrl: './backend-data-into-template.component.html',
-  styleUrls: ['./backend-data-into-template.component.css']
+  styleUrls: ['./backend-data-into-template.component.scss']
 })
 export class BackendDataIntoTemplateComponent implements OnInit {
 
