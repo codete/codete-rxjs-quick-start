@@ -14,10 +14,11 @@ export type KeyboardEventType = KeyboardEvent & { target: HTMLButtonElement };
 export class HamsterSearchComponent implements OnInit {
   @ViewChild('side', { read: ElementRef }) public side?: ElementRef<any>;
   @ViewChild('search', { static: true }) search?: ElementRef<HTMLButtonElement>;
-  searchInputChange$ = defer(() => fromEvent<KeyboardEventType>(this.search?.nativeElement as any, 'keyup')).pipe(
-    map(c => c.target.value),
-    share(),
-  );
+  searchInputChange$ = defer(() => fromEvent<KeyboardEventType>(this.search?.nativeElement as any, 'keyup'))
+    .pipe(
+      map(c => c.target.value),
+      share(),
+    );
   typedWords$?: Observable<string[]>;
   searchResults$?: Observable<Hamster[]>;
   isLoadingData = false;
@@ -46,7 +47,7 @@ export class HamsterSearchComponent implements OnInit {
           }),
         );
       }),
-      tap(() => this.isLoadingData = false )
+      tap(() => this.isLoadingData = false)
     )
   }
 

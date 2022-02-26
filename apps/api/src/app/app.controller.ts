@@ -41,7 +41,7 @@ export class AppController {
   HamsterByName(@Param() params: { name: string; }) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const name = (params?.name || '').replace(':', '')
+        const name = (params?.name || '');
         // console.log(`name: '${name}'`)
         if (name) {
           const hamsters = this.appService.getHamsters();

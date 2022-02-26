@@ -11,7 +11,7 @@ export class HamsterSearchService {
     if (!name) {
       return of([]);
     }
-    return this.http.get<Hamster[]>(`/api/hamsterByName/:${name || ''}`)
+    return this.http.get<Hamster[]>(`/api/hamsterByName/${name || ''}`)
   }
 
 }
