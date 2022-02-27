@@ -1,5 +1,6 @@
 <mat-accordion>
-  <mat-expansion-panel expanded="true" >
+  <mat-expansion-panel [expanded]="expanded[SEARCH]"
+                       (opened)="setTab(SEARCH)">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Hamsters search
@@ -9,7 +10,8 @@
       <app-hamster-search></app-hamster-search>
     </ng-template>
   </mat-expansion-panel>
-  <mat-expansion-panel>
+  <mat-expansion-panel [expanded]="expanded[POSTS]"
+                       (opened)="setTab(POSTS)">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Feed hamster with love

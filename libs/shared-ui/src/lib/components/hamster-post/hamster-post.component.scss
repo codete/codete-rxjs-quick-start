@@ -1,0 +1,48 @@
+:host {
+  display: inline-block;
+  > div {
+    position: relative;
+    display: block;
+  }
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.love-level {
+  width: 100%;
+}
+
+.panel {
+  padding: 10px;
+}
+
+.love-button {
+  float: right;
+  width: 40px;
+  height: 40px;
+  background-image: url('/assets/heart.svg');
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.7;
+  &:active {
+    opacity: 1;
+  }
+}
+
+.love-click-loading {
+  float: left;
+  top: 30px;
+  width: 30px;
+  height: 30px;
+  font-size: 10px;
+  mat-spinner {
+    margin: 0 auto;
+  }
+  span {
+    position: absolute;
+    width: 100px;
+    word-break: normal;
+    top: 4px;
+  }
+}

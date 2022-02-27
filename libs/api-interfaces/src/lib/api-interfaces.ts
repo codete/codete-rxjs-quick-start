@@ -27,6 +27,7 @@ export type Grams = number;
 export interface Hamster {
   name: string;
   weight: Grams;
+  loveLevel: number;
   id: number;
 }
 

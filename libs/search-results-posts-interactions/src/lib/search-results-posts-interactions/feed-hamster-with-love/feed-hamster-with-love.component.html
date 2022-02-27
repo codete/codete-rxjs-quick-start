@@ -1,3 +1,7 @@
-<p>
-  feed-hamster-with-love works!
-</p>
+<ng-container *ngFor="let hamster of (hamsters$ | async)">
+  <app-hamster-post [hamster]="hamster"
+                    (loveButton)="loveClicking$.next(hamster)"></app-hamster-post>
+</ng-container>
+
+<br>
+<br>
