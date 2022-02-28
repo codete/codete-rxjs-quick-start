@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hamster } from '@codete-rxjs/api-interfaces';
-import { exhaustMap, share, Subject } from 'rxjs';
+import { Hamster, HamsterPost } from '@codete-rxjs/api-interfaces';
+import { exhaustMap, map, share, Subject } from 'rxjs';
 import { FeedHamsterWithLoveService } from './feed-hamster-with-love.service';
 
 @Component({
@@ -12,13 +12,14 @@ import { FeedHamsterWithLoveService } from './feed-hamster-with-love.service';
 export class FeedHamsterWithLoveComponent implements OnInit {
 
   constructor(private api: FeedHamsterWithLoveService) { }
-  loveClicking$ = new Subject<Hamster>();
-
+  loveClicking$ = new Subject<HamsterPost>();
   saveLoveClick$ = this.loveClicking$.pipe(
     exhaustMap(hamster => this.api.applyLoveTo(hamster))
   ).subscribe();
 
-  hamsters$ = this.api.getHamsterOwners().pipe(share())
+  hamsters$ = this.api.getHamsterOwners().pipe(
+    map(r => r.map(r => r as HamsterPost))
+  )
 
   ngOnInit() {
 

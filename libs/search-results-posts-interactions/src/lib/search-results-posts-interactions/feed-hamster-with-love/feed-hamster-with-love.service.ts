@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Hamster } from '@codete-rxjs/api-interfaces';
+import { Hamster, HamsterPost } from '@codete-rxjs/api-interfaces';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -15,37 +15,23 @@ export class FeedHamsterWithLoveService {
     return this.http.get<Hamster[]>('/api/hamsters')
   }
 
-  applyLoveTo(hamster: Hamster) {
-    const customObservable = new Observable(obs => {
-      if (obs.closed) {
-        if (obs.closed) {
-          this.snackBar.open(`Canceled applying..`, void 0, {
-            duration: 3000
-          });
+  applyLoveTo(hamster: HamsterPost) {
+    return new Observable(obs => {
+      hamster.isLoading = true;
+      setTimeout(() => {
+        if (isNaN(hamster.loveLevel)) {
+          hamster.loveLevel = 0;
         }
-      } else {
-        setTimeout(() => {
-          if (obs.closed) {
-            this.snackBar.open(`Canceled applying..`, void 0, {
-              duration: 3000
-            });
-          } else {
-            if(isNaN(hamster.loveLevel)) {
-              hamster.loveLevel = 0;
-            }
-            if (hamster.loveLevel <= 100) {
-              hamster.loveLevel = Number(hamster.loveLevel) + 5;
-            }
-            obs.complete();
-            this.snackBar.open(`DONE`, void 0, {
-              duration: 1000
-            });
-          }
-        }, 1000)
-      }
-
+        if (hamster.loveLevel <= 100) {
+          hamster.loveLevel = Number(hamster.loveLevel) + 5;
+        }
+        hamster.isLoading = false;
+        obs.complete();
+        this.snackBar.open(`DONE`, void 0, {
+          duration: 1000
+        });
+      }, 3000);
     });
-    return customObservable;
   }
 
 

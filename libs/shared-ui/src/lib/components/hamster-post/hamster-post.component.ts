@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Hamster } from '@codete-rxjs/api-interfaces';
+import { Hamster, HamsterPost } from '@codete-rxjs/api-interfaces';
 
 @Component({
   selector: 'app-hamster-post',
@@ -8,9 +8,8 @@ import { Hamster } from '@codete-rxjs/api-interfaces';
 })
 export class HamsterPostComponent implements OnInit {
 
-  @Input() hamster?: Hamster;
+  @Input() hamster?: HamsterPost;
   @Input() loveLevel: number = 0;
-  @Input() applyingLove: boolean = false;
   @Output() loveButton = new EventEmitter<void>();
 
   constructor() { }
