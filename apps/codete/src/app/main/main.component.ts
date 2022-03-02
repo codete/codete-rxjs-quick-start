@@ -23,16 +23,6 @@ export class MainComponent implements OnInit {
       imageLink: '/assets/backend-data-into-template.jpeg',
       link: '/search-results-posts-interactions'
     },
-    // {
-    //   title: 'Understanding <b>“hot and cold” observables</b>',
-    //   imageLink: '/assets/backend-data-into-template.jpeg',
-    //   link: '/hot-and-cold-observables'
-    // },
-    // {
-    //   title: 'Reacting to multiple events in your application',
-    //   imageLink: '/assets/backend-data-into-template.jpeg',
-    //   link: '/multiple-events'
-    // }
   ]
 
   constructor() { }
