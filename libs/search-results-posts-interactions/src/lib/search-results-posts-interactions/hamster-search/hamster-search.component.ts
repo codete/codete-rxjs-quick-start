@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Hamster } from '@codete-rxjs/api-interfaces';
-import { BehaviorSubject, bufferCount, catchError, debounce, defer, EMPTY, filter, finalize, fromEvent, map, Observable, reduce, scan, share, switchMap, tap, timer } from 'rxjs';
+import { BehaviorSubject, bufferCount, catchError, debounce, debounceTime, defer, distinctUntilChanged, EMPTY, filter, finalize, fromEvent, map, Observable, reduce, scan, share, switchMap, tap, timer } from 'rxjs';
 import { HamsterSearchService } from './hamster-search.service';
 
 export type KeyboardEventType = KeyboardEvent & { target: HTMLButtonElement };
@@ -17,6 +17,8 @@ export class HamsterSearchComponent implements OnInit {
   searchInputChange$ = defer(() => fromEvent<KeyboardEventType>(this.search?.nativeElement as any, 'keyup'))
     .pipe(
       map(c => c.target.value),
+      debounceTime(500),
+      distinctUntilChanged(),
       share(),
     );
   typedWords$?: Observable<string[]>;
@@ -34,7 +36,6 @@ export class HamsterSearchComponent implements OnInit {
         return a.concat(b).slice(-20);
       }, [] as string[]),
       tap(() => this.scrollBottom(this.side)),
-      share()
     );
 
     this.searchResults$ = this.searchInputChange$.pipe(
