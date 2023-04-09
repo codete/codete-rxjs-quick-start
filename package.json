@@ -1,9 +1,30 @@
 {
   "tnp": {
+    "resources": [],
     "type": "container",
     "smart": true,
-    "monorepo": true
+    "monorepo": true,
+    "overrided": {
+      "linkedFolders": [],
+      "ignoreDepsPattern": [
+        "*"
+      ],
+      "includeAsDev": [],
+      "includeOnly": [],
+      "dependencies": {}
+    },
+    "linkedProjects": [],
+    "smartContainerBuildTarget": "",
+    "linkedRepos": [],
+    "libReleaseOptions": {
+      "nodts": false,
+      "obscure": false,
+      "ugly": false,
+      "includeNodeModules": false
+    }
   },
-  "name": "codete-rxjs",
-  "version": "0.0.0"
+  "name": "codete-rxjs-quick-start",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {}
 }
