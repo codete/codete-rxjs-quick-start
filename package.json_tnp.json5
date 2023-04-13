@@ -1,0 +1,31 @@
+{
+  "resources": [],
+  "overrided": {
+    "linkedFolders": [],
+    "ignoreDepsPattern": [
+      "*"
+    ],
+    "includeAsDev": [],
+    "includeOnly": [],
+    "dependencies": {}
+  },
+  "linkedProjects": [
+    "backend-data-into-template",
+    "list-of-ids-to-full-models",
+    "main",
+    "search-results-posts-interactions",
+    "shared",
+  ],
+  "smartContainerBuildTarget": "main",
+  "linkedRepos": [],
+  "libReleaseOptions": {
+    "nodts": false,
+    "obscure": false,
+    "ugly": false,
+    "includeNodeModules": false
+  },
+  "version": "v3",
+  "type": "container",
+  "smart": true,
+  "monorepo": true
+}

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './main.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedUiModule } from '@codete-rxjs/shared-ui';
+import { SharedUiModule } from '@codete-rxjs-quick-start/shared-ui';
 
 const routes: Routes = [
   {

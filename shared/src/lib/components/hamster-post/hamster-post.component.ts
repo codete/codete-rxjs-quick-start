@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Hamster, HamsterPost } from '@codete-rxjs/api-interfaces';
+import { HamsterPost } from './hamster-post';
 
 @Component({
   selector: 'app-hamster-post',

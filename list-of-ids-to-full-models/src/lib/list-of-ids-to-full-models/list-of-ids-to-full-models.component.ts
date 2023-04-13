@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Hamster, HamsterOwner, HamsterOwnerFull } from '@codete-rxjs/api-interfaces';
+import { Hamster, HamsterOwner } from '@codete-rxjs-quick-start/shared';
 import { combineLatest, combineLatestWith, map, mergeMap, reduce, share, withLatestFrom } from 'rxjs';
 import { ListOfIdsToFullModelsService } from './list-of-ids-to-full-models.service';
 
@@ -38,7 +38,7 @@ export class ListOfIdsToFullModelsComponent implements OnInit {
     map(([owners, hamsters]) => {
       return owners.map(a => {
         a.hamsters = a.hamsters.map(hamsterId => hamsters.find(({ id }) => id === hamsterId)) as any;
-        return a as HamsterOwnerFull;
+        return a as HamsterOwner;
       });
     })
   );

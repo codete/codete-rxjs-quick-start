@@ -14,17 +14,17 @@ const routes: Routes = [
   },
   {
     path: 'backend-data-into-template',
-    loadChildren: () => import(`@codete-rxjs/backend-data-into-template`)
+    loadChildren: () => import(`@codete-rxjs-quick-start/backend-data-into-template`)
       .then(m => m.BackendDataIntoTemplateModule),
   },
   {
     path: 'list-of-ids-to-full-models',
-    loadChildren: () => import('@codete-rxjs/list-of-ids-to-full-models')
+    loadChildren: () => import('@codete-rxjs-quick-start/list-of-ids-to-full-models')
       .then(m => m.ListOfIdsToFullModelsModule),
   },
   {
     path: 'search-results-posts-interactions',
-    loadChildren: () => import('@codete-rxjs/search-results-posts-interactions')
+    loadChildren: () => import('@codete-rxjs-quick-start/search-results-posts-interactions')
       .then(m => m.SearchResultsPostsInteractionsModule),
   },
 ];

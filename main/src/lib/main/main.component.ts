@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Topic } from '@codete-rxjs/shared';
+import { Topic } from '@codete-rxjs-quick-start/shared';
 
 @Component({
   selector: 'app-main',

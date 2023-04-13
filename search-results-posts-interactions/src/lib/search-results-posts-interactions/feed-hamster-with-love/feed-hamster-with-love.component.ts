@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Hamster, HamsterPost } from '@codete-rxjs/api-interfaces';
+import { Hamster, HamsterPost } from '@codete-rxjs-quick-start/shared';
 import { exhaustMap, map, share, Subject } from 'rxjs';
 import { FeedHamsterWithLoveService } from './feed-hamster-with-love.service';
 
@@ -18,8 +18,8 @@ export class FeedHamsterWithLoveComponent implements OnInit {
   ).subscribe();
 
   hamsters$ = this.api.getHamsterOwners().pipe(
-    map(r => r.map(r => r as HamsterPost))
-  )
+    map(r => r.map(r => r))
+  );
 
   ngOnInit() {
 

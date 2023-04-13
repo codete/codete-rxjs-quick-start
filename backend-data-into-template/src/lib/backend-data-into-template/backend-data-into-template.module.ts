@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BackendDataIntoTemplateComponent } from './backend-data-into-template.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedUiModule } from '@codete-rxjs/shared-ui';
+import { MaterialModule } from '@codete-rxjs-quick-start/shared';
 
 const routes: Routes = [
   {
@@ -17,7 +17,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
-    SharedUiModule,
+    MaterialModule,
   ],
   declarations: [BackendDataIntoTemplateComponent]
 })

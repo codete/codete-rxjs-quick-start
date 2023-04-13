@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Hamster, HamsterPost } from '@codete-rxjs/api-interfaces';
+import { Hamster, HamsterPost } from '@codete-rxjs-quick-start/shared';
 import { Observable } from 'rxjs';
 
 @Injectable()

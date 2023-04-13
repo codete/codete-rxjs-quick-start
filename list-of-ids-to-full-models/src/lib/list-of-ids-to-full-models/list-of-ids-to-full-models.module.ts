@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListOfIdsToFullModelsComponent } from './list-of-ids-to-full-models.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { SharedUiModule } from '@codete-rxjs/shared-ui';
+import { MaterialModule } from '@codete-rxjs-quick-start/shared';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
@@ -16,7 +16,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    SharedUiModule,
+    MaterialModule,
     HttpClientModule,
     RouterModule.forChild(routes),
   ],

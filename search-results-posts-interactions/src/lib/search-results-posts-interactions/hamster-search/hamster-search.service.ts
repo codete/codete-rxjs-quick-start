@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Hamster } from '@codete-rxjs/api-interfaces';
+import { Hamster } from '@codete-rxjs-quick-start/shared';
 import { of } from 'rxjs';
 
 @Injectable()

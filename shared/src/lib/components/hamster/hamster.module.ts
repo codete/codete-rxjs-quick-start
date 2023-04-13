@@ -1,8 +1,9 @@
+//#region @browser
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HamsterComponent } from './hamster.component';
 import { MaterialModule } from '../../material.module';
-import { HamsterComponentForPost } from './hamster-for-post.component';
+import { HamsterComponentForPost } from './components/hamster-for-post/hamster-for-post.component';
 
 @NgModule({
   imports: [
@@ -13,3 +14,4 @@ import { HamsterComponentForPost } from './hamster-for-post.component';
   exports: [HamsterComponent, HamsterComponentForPost],
 })
 export class HamsterModule { }
+//#endregion
