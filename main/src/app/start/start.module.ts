@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MainComponent } from './main.component';
+import { StartComponent } from './start.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedUiModule } from '@codete-rxjs-quick-start/shared-ui';
+import { MaterialModule } from '@codete-rxjs-quick-start/shared';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent,
+    component: StartComponent,
   },
 ]
 
@@ -17,9 +17,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
-    SharedUiModule,
+    MaterialModule,
   ],
-  declarations: [MainComponent],
-  exports: [MainComponent]
+  declarations: [StartComponent],
+  exports: [StartComponent]
 })
-export class MainModule { }
+export class StartModule { }

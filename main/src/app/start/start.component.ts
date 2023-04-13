@@ -6,7 +6,7 @@ import { Topic } from '@codete-rxjs-quick-start/shared';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class StartComponent implements OnInit {
   topics: Topic[] = [
     {
       title: 'Using http client to get <b>backend data</b> straight <b>into</b> angular <b>template</b>.',
