@@ -1,4 +1,5 @@
 import { Firedev } from 'firedev';
+import { Helpers } from 'tnp-core';
 import { Book } from './book';
 import { IBook } from './book.models';
 
@@ -21,6 +22,7 @@ export class BookController extends Firedev.Base.Controller<any> {
     const config = super.getAll();
     return async (req, res) => { // @ts-ignore
       const arr = await Firedev.getResponseValue(config, req, res) as Book[];
+      await Helpers.wait(2);
       return arr as any;
     }
     //#endregion
