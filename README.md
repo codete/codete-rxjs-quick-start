@@ -1,12 +1,8 @@
-
-
-<p style="text-align: center;"><img src="./baner.jpeg" ></p>
-
 # Codete RxJS Quick Start
 
-This repository is a part of tutorial https://codete.com/blog/rx-js-quick-introduction-with-examples-for-beginner-level-angular-developers
+<p style="text-align: center;"><img src="./_images/baner.jpeg" ></p>
 
-<p style="text-align: center;"><img src="./app.png" ></p>
+<p style="text-align: center;"><img src="./_images/app.png" ></p>
 
 # Installation & build
 
