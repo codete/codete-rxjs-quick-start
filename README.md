@@ -13,12 +13,12 @@ npm i -g firedev
 
 2. Clone project:
 ```
-git clone https://github.com/codete/codete-ngrx-quick-start.git
+git clone https://github.com/codete/codete-rxjs-quick-start.git
 ```
 
 3. Open it in Visual Studio Code:
 ```
-code codete-ngrx-quick-start
+code codete-rxjs-quick-start
 ```
 
 4. Start build (no need to npm install)
