@@ -134,3 +134,17 @@ footer {
     color    : white;
     font-size: 10px;
 }
+
+@media (max-width:600px) {
+
+  .bg-logo-heart {
+    scale: 2.0;
+  }
+
+  .logo-header {
+    scale: 0.7;
+    top: 15px;
+    position: relative;
+  }
+
+}

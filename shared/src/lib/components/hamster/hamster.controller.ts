@@ -65,18 +65,20 @@ export class HamsterController extends Firedev.Base.Controller<any> {
     const config = super.getAll();
     return async (req, res) => { // @ts-ignore
 
+      //#region @backend
       req.on('close', function () {
         console.log('user aborted');
         req['isCanceled'] = true;
         res.end();
         // code to handle connection abort
       });
+      //#endregion
 
       const hamsters = await Firedev.getResponseValue(config, req, res) as Hamster[];
 
       return await new Promise((resolve, reject) => {
         setTimeout(() => {
-          if (req['isCanceled']) {
+          if ((req || {})['isCanceled']) {
             resolve(void 0);
           } else {
             const localName = (name || '');
