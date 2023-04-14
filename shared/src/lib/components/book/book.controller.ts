@@ -15,7 +15,7 @@ export class BookController extends Firedev.Base.Controller<any> {
     }
   }
 
-  @Firedev.Http.GET('/api/books') // @ts-ignore
+  @Firedev.Http.GET('/api/books', true) // @ts-ignore
   getBooks(): Firedev.Response<Book[]> {
     //#region @websqlFunc
     const config = super.getAll();

@@ -15,7 +15,7 @@ export class HamsterController extends Firedev.Base.Controller<any> {
     }
   }
 
-  @Firedev.Http.GET(`/api/hamsters`) // @ts-ignore
+  @Firedev.Http.GET(`/api/hamsters`, true) // @ts-ignore
   getHamsters(@Firedev.Http.Param.Query('limit') limit = Infinity): Firedev.Response<Hamster[]> {
     //#region @websqlFunc
     const config = super.getAll();
@@ -29,7 +29,7 @@ export class HamsterController extends Firedev.Base.Controller<any> {
     //#endregion
   }
 
-  @Firedev.Http.GET('/api/hamsters/names') // @ts-ignore
+  @Firedev.Http.GET('/api/hamsters/names', true) // @ts-ignore
   getHamsterNames(): Firedev.Response<string[]> {
     //#region @websqlFunc
     const config = super.getAll();
@@ -40,7 +40,7 @@ export class HamsterController extends Firedev.Base.Controller<any> {
     //#endregion
   }
 
-  @Firedev.Http.GET('hamsters/ids') // @ts-ignore
+  @Firedev.Http.GET('hamsters/ids', true) // @ts-ignore
   getHamsterNames(): Firedev.Response<number[]> {
     //#region @websqlFunc
     const config = super.getAll();
@@ -51,7 +51,7 @@ export class HamsterController extends Firedev.Base.Controller<any> {
     //#endregion
   }
 
-  @Firedev.Http.GET('/api/hamster/:id') // @ts-ignore
+  @Firedev.Http.GET('/api/hamster/:id', true) // @ts-ignore
   getHamsterNames(@Firedev.Http.Param.Path('id') id = 0): Firedev.Response<Hamster> {
     //#region @websqlFunc
     const config = super.getBy(id);
@@ -61,7 +61,7 @@ export class HamsterController extends Firedev.Base.Controller<any> {
     //#endregion
   }
 
-  @Firedev.Http.GET('/api/hamsterByName/:name') // @ts-ignore
+  @Firedev.Http.GET('/api/hamsterByName/:name', true) // @ts-ignore
   getHamsterNames(@Firedev.Http.Param.Path('name') name = ''): Firedev.Response<string> {
     //#region @websqlFunc
     const config = super.getAll();

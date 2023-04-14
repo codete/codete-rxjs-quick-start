@@ -15,7 +15,7 @@ export class AuthorController extends Firedev.Base.Controller<any> {
     }
   }
 
-  @Firedev.Http.GET('/api/authors') // @ts-ignore
+  @Firedev.Http.GET('/api/authors', true) // @ts-ignore
   getAuhtors(): Firedev.Response<Author[]> {
     //#region @websqlFunc
     const config = super.getAll();
@@ -37,20 +37,20 @@ export class AuthorController extends Firedev.Base.Controller<any> {
         books: [1_000_000, 1_000_001]
       },
       {
-        id: 1000,
+        id: 1001,
         name: 'Charles',
         books: [1_000_002]
       },
       {
-        id: 1000,
+        id: 1002,
         name: 'Donald',
         books: [1_000_003]
       },
     ];
 
     for (let index = 0; index < authors.length; index++) {
-      const book = authors[index];
-      await repo.save(Author.from(book))
+      const author = authors[index];
+      await repo.save(Author.from(author))
     }
 
   }

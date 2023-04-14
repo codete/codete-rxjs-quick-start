@@ -15,7 +15,7 @@ export class HamsterOwnerController extends Firedev.Base.Controller<any> {
     }
   }
 
-  @Firedev.Http.GET(`/api/hamsters/owners`) // @ts-ignore
+  @Firedev.Http.GET(`/api/hamsters/owners`, true) // @ts-ignore
   getHamstersOwners(): Firedev.Response<HamsterOwner[]> {
     //#region @websqlFunc
     const config = super.getAll();

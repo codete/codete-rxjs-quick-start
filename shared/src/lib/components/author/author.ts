@@ -1,6 +1,6 @@
 import { Firedev } from 'firedev';
 import { _ } from 'tnp-core';
-import type { Book } from '../book/book';
+import { Book } from '../book/book';
 import type { AuthorController } from './author.controller';
 
 @Firedev.Entity({
@@ -28,5 +28,8 @@ export class Author extends Firedev.Base.Entity<any> {
   //#endregion
   name: string;
 
+  //#region @websql
+  @Firedev.Orm.Column.Custom({ type: 'simple-json', nullable: true })
+  //#endregion
   books: (Book | number)[];
 }
