@@ -12,6 +12,7 @@ import {
 } from '@codete-rxjs-quick-start/shared';
 
 //#region @browser
+import { FiredevGithubForkMeCornerModule } from 'firedev-ui';
 import { NgModule, NgZone, ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
@@ -75,6 +76,7 @@ export class MainComponent implements OnInit {
 //#region main module
 @NgModule({
   imports: [
+    FiredevGithubForkMeCornerModule,
     RouterModule.forRoot(routes, {
       useHash: true,
       preloadingStrategy: PreloadAllModules,
