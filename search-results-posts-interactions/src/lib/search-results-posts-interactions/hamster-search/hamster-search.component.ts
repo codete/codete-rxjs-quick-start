@@ -45,8 +45,8 @@ export class HamsterSearchComponent implements OnInit {
 
     this.searchResults$ = this.searchInputChange$.pipe(
       tap(() => this.isLoadingData = true),
-      switchMap(w => {
-        return this.api.getHamsterByName(w).pipe(
+      switchMap(inputName => {
+        return this.api.getHamsterByName(inputName).pipe(
           catchError((err) => {
             this.isLoadingData = false;
             return EMPTY;

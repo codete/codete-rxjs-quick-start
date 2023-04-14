@@ -64,35 +64,35 @@ export class HamsterController extends Firedev.Base.Controller<any> {
     //#region @websqlFunc
     const config = super.getAll();
     return async (req, res) => { // @ts-ignore
+
+      req.on('close', function () {
+        console.log('user aborted');
+        req['isCanceled'] = true;
+        res.end();
+        // code to handle connection abort
+      });
+
       const hamsters = await Firedev.getResponseValue(config, req, res) as Hamster[];
-      return new Promise((resolve, reject) => {
+
+      return await new Promise((resolve, reject) => {
         setTimeout(() => {
-          const localName = (name || '');
-          // console.log(`name: '${name}'`)
-          if (localName) {
-            const results = fuzzy.filter(localName, hamsters.map(h => h.name));
-            // const results = this.appService.getHamsters().filter(h => h.name.search(name) !== -1);
-            // console.log(hammers)
-            resolve(results.map(hamyName => hamsters.find(h => h.name === hamyName.string)));
+          if (req['isCanceled']) {
+            resolve(void 0);
           } else {
-            resolve([]);
+            const localName = (name || '');
+            if (localName) {
+              const results = fuzzy.filter(localName, hamsters.map(h => h.name));
+              resolve(results.map(hamyName => hamsters.find(h => h.name === hamyName.string)));
+            } else {
+              resolve([]);
+            }
           }
+
         }, 1000)
       })
     }
     //#endregion
   }
-
-
-
-
-  // getHamsterIds() {
-  //   return Hamsters.map(({ id }) => id);
-  // }
-
-  // getHamstersOwners() {
-  //   return HamstersOwners;
-  // }
 
   //#region @websql
   async initExampleDbData() {

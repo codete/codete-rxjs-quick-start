@@ -2,7 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Hamster, IHamster, HamsterOwner, HamsterPost } from '@codete-rxjs-quick-start/shared';
+import { Hamster, IHamster, HamsterOwner, HamsterPost, host } from '@codete-rxjs-quick-start/shared';
 import { map, Observable } from 'rxjs';
 
 @Injectable()
@@ -19,7 +19,7 @@ export class FeedHamsterWithLoveService {
   }
 
   getHamsterOwners() {
-    return this.http.get<IHamster[]>('/api/hamsters')
+    return this.http.get<IHamster[]>(`${host}/api/hamsters`)
   }
 
   applyLoveTo(hamster: HamsterPost) {

@@ -1,7 +1,7 @@
 //#region @browser
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Hamster, IHamster } from '@codete-rxjs-quick-start/shared';
+import { Hamster, host, IHamster } from '@codete-rxjs-quick-start/shared';
 import { map, of } from 'rxjs';
 
 @Injectable()
@@ -23,7 +23,7 @@ export class HamsterSearchService {
     if (!name) {
       return of([]);
     }
-    return this.http.get<IHamster[]>(`/api/hamsterByName/${name}`)
+    return this.http.get<IHamster[]>(`${host}/api/hamsterByName/${name}`)
   }
 
 }

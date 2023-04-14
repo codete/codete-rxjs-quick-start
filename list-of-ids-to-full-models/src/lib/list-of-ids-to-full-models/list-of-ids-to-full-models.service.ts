@@ -1,7 +1,7 @@
 //#region @browser
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Hamster, HamsterOwner, IHamster, IHamsterOwner } from '@codete-rxjs-quick-start/shared';
+import { Hamster, HamsterOwner, IHamster, IHamsterOwner, host } from '@codete-rxjs-quick-start/shared';
 import { map } from 'rxjs';
 import { Helpers } from 'tnp-core';
 
@@ -23,11 +23,11 @@ export class ListOfIdsToFullModelsService {
   }
 
   getHamsterOwners() {
-    return this.http.get<IHamsterOwner[]>('/api/hamsters/owners')
+    return this.http.get<IHamsterOwner[]>(`${host}/api/hamsters/owners`)
   }
 
   getHamsterById(id: number) {
-    return this.http.get<IHamster>(`/api/hamster/${id}`)
+    return this.http.get<IHamster>(`${host}/api/hamster/${id}`)
   }
 
 }

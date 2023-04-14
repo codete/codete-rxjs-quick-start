@@ -1,7 +1,7 @@
 //#region @browser
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Author, Book, IAuthor } from '@codete-rxjs-quick-start/shared';
+import { Author, Book, host, IAuthor } from '@codete-rxjs-quick-start/shared';
 import { combineLatestWith, delay, filter, map, Observable, share, tap } from 'rxjs';
 import { Helpers } from 'tnp-core';
 
@@ -11,13 +11,13 @@ import { Helpers } from 'tnp-core';
   styleUrls: ['./backend-data-into-template.component.scss']
 })
 export class BackendDataIntoTemplateComponent implements OnInit {
-  authors$ = this.http.get<Author[]>('/api/authors').pipe(
+  authors$ = this.http.get<Author[]>(`${host}/api/authors`).pipe(
     share()
   );
 
   authorsWithAtLeastOneBook$: Observable<IAuthor[]>;
 
-  books$ = this.http.get<Book[]>('/api/books').pipe(
+  books$ = this.http.get<Book[]>(`${host}/api/books`).pipe(
     delay(1000)
   );
 

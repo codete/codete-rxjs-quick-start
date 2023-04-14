@@ -1,9 +1,9 @@
 //#region @notForNpm
 //#region imports
 import { Firedev } from 'firedev';
-const host = 'http://localhost:4199';
 
 import {
+  host,
   Author, AuthorController,
   Book, BookController,
   Hamster, HamsterController,
