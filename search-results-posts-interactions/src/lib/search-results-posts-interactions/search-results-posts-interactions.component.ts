@@ -30,7 +30,7 @@ export class SearchResultsPostsInteractionsComponent implements OnInit {
       takeUntil(this.destroy$),
       tap((params) => {
         if (Object.keys(params).length === 0) {
-          this.setTab(this.SEARCH)
+          this.expanded[this.SEARCH] = true;
         } else {
           const tab = params['tab'] as HamsterRouter;
           this.expanded[tab] = true;
@@ -40,11 +40,20 @@ export class SearchResultsPostsInteractionsComponent implements OnInit {
   }
 
   async setTab(tab: HamsterRouter) {
-    const url = await firstValueFrom(this.currentUrl$)
+    const currentParam = await firstValueFrom(this.route.queryParams);
+    if (tab === this.SEARCH &&
+      (
+        Object.keys(currentParam).includes(this.SEARCH)
+        || (Object.keys(currentParam).length === 0)
+      )
+    ) {
+      return;
+    }
+    const url = await firstValueFrom(this.currentUrl$);
     this.router.navigate(url, {
       queryParams: {
         tab
-      }
+      },
     });
   }
 
