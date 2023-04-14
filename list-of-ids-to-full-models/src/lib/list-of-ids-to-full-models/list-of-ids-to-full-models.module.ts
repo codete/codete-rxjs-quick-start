@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ListOfIdsToFullModelsComponent } from './list-of-ids-to-full-models.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from '@codete-rxjs-quick-start/shared';
+import { HamsterModule, MaterialModule } from '@codete-rxjs-quick-start/shared';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
@@ -19,6 +19,7 @@ const routes: Routes = [
     CommonModule,
     MaterialModule,
     HttpClientModule,
+    HamsterModule,
     RouterModule.forChild(routes),
   ],
   declarations: [ListOfIdsToFullModelsComponent]

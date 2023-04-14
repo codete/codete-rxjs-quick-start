@@ -6,7 +6,7 @@ import { combineLatestAll, combineLatestWith, firstValueFrom, share, Subject, Su
 type HamsterRouter = 'hamsters-search' | 'hamster-posts';
 
 @Component({
-  selector: 'app-search-results-posts-interactions',
+  selector: 'app-search-results-posts-interactions-tab',
   templateUrl: './search-results-posts-interactions.component.html',
   styleUrls: ['./search-results-posts-interactions.component.scss']
 })

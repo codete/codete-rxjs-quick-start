@@ -28,6 +28,9 @@ export class HamsterOwner extends Firedev.Base.Entity<any> {
   //#endregion
   name: string;
 
+  //#region @websql
+  @Firedev.Orm.Column.SimpleJson()
+  //#endregion
   hamsters: (number | Hamster)[];
 
 }

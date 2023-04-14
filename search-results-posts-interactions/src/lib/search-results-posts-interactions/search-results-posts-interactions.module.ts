@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@codete-rxjs-quick-start/shared';
 import { HamsterSearchModule } from './hamster-search/hamster-search.module';
 import { FeedHamsterWithLoveModule } from './feed-hamster-with-love/feed-hamster-with-love.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     MaterialModule,
+    HttpClientModule,
     HamsterSearchModule,
     FeedHamsterWithLoveModule,
     RouterModule.forChild(routes),

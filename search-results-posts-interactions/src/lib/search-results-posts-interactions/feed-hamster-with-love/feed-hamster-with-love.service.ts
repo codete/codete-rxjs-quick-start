@@ -2,18 +2,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Hamster, HamsterPost } from '@codete-rxjs-quick-start/shared';
-import { Observable } from 'rxjs';
+import { Hamster, IHamster, HamsterOwner, HamsterPost } from '@codete-rxjs-quick-start/shared';
+import { map, Observable } from 'rxjs';
 
 @Injectable()
 export class FeedHamsterWithLoveService {
   constructor
     (private http: HttpClient,
       private snackBar: MatSnackBar
-    ) { }
+    ) {
+    //#region @websql
+    this.getHamsterOwners = () => Hamster.ctrl.getHamsters().received.observable.pipe(
+      map(r => r.body.rawJson)
+    );
+    //#endregion
+  }
 
   getHamsterOwners() {
-    return this.http.get<Hamster[]>('/api/hamsters')
+    return this.http.get<IHamster[]>('/api/hamsters')
   }
 
   applyLoveTo(hamster: HamsterPost) {

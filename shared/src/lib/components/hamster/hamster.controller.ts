@@ -1,6 +1,7 @@
 import { Firedev } from 'firedev';
 import { Hamster } from './hamster';
 import { IHamster } from './hamster.models';
+import * as fuzzy from 'fuzzy';
 
 @Firedev.Controller({
   className: 'HamsterController',
@@ -16,14 +17,11 @@ export class HamsterController extends Firedev.Base.Controller<any> {
   }
 
   @Firedev.Http.GET(`/api/hamsters`, true) // @ts-ignore
-  getHamsters(@Firedev.Http.Param.Query('limit') limit = Infinity): Firedev.Response<Hamster[]> {
+  getHamsters(): Firedev.Response<Hamster[]> {
     //#region @websqlFunc
     const config = super.getAll();
     return async (req, res) => { // @ts-ignore
-      let arr = await Firedev.getResponseValue(config, req, res) as Hamster[];
-      if (arr.length > limit) {
-        arr = arr.slice(0, limit - 1);
-      }
+      const arr = await Firedev.getResponseValue(config, req, res) as Hamster[];
       return arr as any;
     }
     //#endregion
@@ -52,7 +50,7 @@ export class HamsterController extends Firedev.Base.Controller<any> {
   }
 
   @Firedev.Http.GET('/api/hamster/:id', true) // @ts-ignore
-  getHamsterNames(@Firedev.Http.Param.Path('id') id = 0): Firedev.Response<Hamster> {
+  getHamsterById(@Firedev.Http.Param.Path('id') id = 0): Firedev.Response<Hamster> {
     //#region @websqlFunc
     const config = super.getBy(id);
     return async (req, res) => { // @ts-ignore
@@ -62,12 +60,25 @@ export class HamsterController extends Firedev.Base.Controller<any> {
   }
 
   @Firedev.Http.GET('/api/hamsterByName/:name', true) // @ts-ignore
-  getHamsterNames(@Firedev.Http.Param.Path('name') name = ''): Firedev.Response<string> {
+  getHamsterByName(@Firedev.Http.Param.Path('name') name = ''): Firedev.Response<Hamster[]> {
     //#region @websqlFunc
     const config = super.getAll();
     return async (req, res) => { // @ts-ignore
-      const arr = await Firedev.getResponseValue(config, req, res) as Hamster[];
-      return arr.find((h) => h.name === name)?.name;
+      const hamsters = await Firedev.getResponseValue(config, req, res) as Hamster[];
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const localName = (name || '');
+          // console.log(`name: '${name}'`)
+          if (localName) {
+            const results = fuzzy.filter(localName, hamsters.map(h => h.name));
+            // const results = this.appService.getHamsters().filter(h => h.name.search(name) !== -1);
+            // console.log(hammers)
+            resolve(results.map(hamyName => hamsters.find(h => h.name === hamyName.string)));
+          } else {
+            resolve([]);
+          }
+        }, 1000)
+      })
     }
     //#endregion
   }

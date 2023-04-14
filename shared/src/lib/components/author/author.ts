@@ -29,7 +29,7 @@ export class Author extends Firedev.Base.Entity<any> {
   name: string;
 
   //#region @websql
-  @Firedev.Orm.Column.Custom({ type: 'simple-json', nullable: true })
+  @Firedev.Orm.Column.SimpleJson()
   //#endregion
   books: (Book | number)[];
 }
