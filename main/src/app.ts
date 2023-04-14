@@ -14,6 +14,7 @@ import {
 //#region @browser
 import { NgModule, NgZone, ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 //#endregion
@@ -55,13 +56,19 @@ const routes: Routes = [
 })
 export class MainComponent implements OnInit {
   constructor(
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private router: Router,
   ) { }
 
   async ngOnInit() {
     Firedev.initNgZone(this.ngZone);
     await start();
   }
+
+  gotoroot() {
+    this.router.navigateByUrl('/');
+  }
+
 }
 //#endregion
 
