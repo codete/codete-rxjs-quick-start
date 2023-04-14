@@ -464,6 +464,8 @@ SOFTWARE.
 
 firedev-typeorm
 
+firedev-ui
+
 fuzzy
 MIT
 Copyright (c) 2012 Matt York
