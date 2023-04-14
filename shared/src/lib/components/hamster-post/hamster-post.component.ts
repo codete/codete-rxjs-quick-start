@@ -1,3 +1,4 @@
+//#region @browser
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HamsterPost } from './hamster-post';
 
@@ -18,3 +19,4 @@ export class HamsterPostComponent implements OnInit {
   }
 
 }
+//#endregion

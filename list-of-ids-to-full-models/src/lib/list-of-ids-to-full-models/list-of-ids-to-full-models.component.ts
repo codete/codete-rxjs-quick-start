@@ -1,3 +1,4 @@
+//#region @browser
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Hamster, HamsterOwner } from '@codete-rxjs-quick-start/shared';
@@ -47,3 +48,4 @@ export class ListOfIdsToFullModelsComponent implements OnInit {
   }
 
 }
+//#endregion

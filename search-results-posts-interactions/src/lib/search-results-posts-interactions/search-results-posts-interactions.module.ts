@@ -1,3 +1,4 @@
+//#region @browser
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchResultsPostsInteractionsComponent } from './search-results-posts-interactions.component';
@@ -24,3 +25,4 @@ const routes: Routes = [
   declarations: [SearchResultsPostsInteractionsComponent]
 })
 export class SearchResultsPostsInteractionsModule { }
+//#endregion

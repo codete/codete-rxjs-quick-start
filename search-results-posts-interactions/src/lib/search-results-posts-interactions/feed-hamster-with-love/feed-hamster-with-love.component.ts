@@ -1,3 +1,4 @@
+//#region @browser
 import { Component, OnInit } from '@angular/core';
 import { Hamster, HamsterPost } from '@codete-rxjs-quick-start/shared';
 import { exhaustMap, map, share, Subject } from 'rxjs';
@@ -26,3 +27,4 @@ export class FeedHamsterWithLoveComponent implements OnInit {
   }
 
 }
+//#endregion

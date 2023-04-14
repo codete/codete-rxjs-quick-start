@@ -1,3 +1,4 @@
+//#region @browser
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListOfIdsToFullModelsComponent } from './list-of-ids-to-full-models.component';
@@ -23,3 +24,4 @@ const routes: Routes = [
   declarations: [ListOfIdsToFullModelsComponent]
 })
 export class ListOfIdsToFullModelsModule { }
+//#endregion

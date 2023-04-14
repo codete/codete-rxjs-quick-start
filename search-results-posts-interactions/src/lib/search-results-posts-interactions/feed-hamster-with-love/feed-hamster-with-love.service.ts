@@ -1,3 +1,4 @@
+//#region @browser
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -34,5 +35,5 @@ export class FeedHamsterWithLoveService {
     });
   }
 
-
 }
+//#endregion

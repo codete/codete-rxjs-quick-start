@@ -2,10 +2,20 @@
 //#region imports
 import { Firedev } from 'firedev';
 const host = 'http://localhost:4199';
+
+import {
+  Author, AuthorController,
+  Book, BookController,
+  Hamster, HamsterController,
+  HamsterOwner, HamsterOwnerController,
+  HamsterPost, HamsterPostController,
+} from '@codete-rxjs-quick-start/shared';
+
 //#region @browser
 import { NgModule, NgZone, ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+
 //#endregion
 //#endregion
 
@@ -79,9 +89,19 @@ async function start() {
   const context = await Firedev.init({
     host,
     controllers: [
+      AuthorController,
+      BookController,
+      HamsterController,
+      HamsterOwnerController,
+      HamsterPostController,
       // PUT FIREDEV CONTORLLERS HERE
     ],
     entities: [
+      Author,
+      Book,
+      Hamster,
+      HamsterOwner,
+      HamsterPost,
       // PUT FIREDEV ENTITIES HERE
     ],
     //#region @websql
@@ -92,13 +112,6 @@ async function start() {
     }
     //#endregion
   });
-  //#region @backend
-  if (Firedev.isNode) {
-    context.node.app.get('/hello', (req, res) => {
-      res.send('Hello my-entity')
-    })
-  }
-  //#endregion
 }
 //#endregion
 

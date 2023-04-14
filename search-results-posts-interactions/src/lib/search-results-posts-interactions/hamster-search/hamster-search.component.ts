@@ -1,6 +1,11 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+//#region @browser
 import { Hamster } from '@codete-rxjs-quick-start/shared';
-import { BehaviorSubject, bufferCount, catchError, debounce, debounceTime, defer, distinctUntilChanged, EMPTY, filter, finalize, fromEvent, map, Observable, reduce, scan, share, switchMap, tap, timer } from 'rxjs';
+import {
+  BehaviorSubject, bufferCount, catchError, debounce, debounceTime, defer,
+  distinctUntilChanged, EMPTY, filter, finalize, fromEvent, map, Observable,
+  reduce, scan, share, switchMap, tap, timer
+} from 'rxjs';
 import { HamsterSearchService } from './hamster-search.service';
 
 export type KeyboardEventType = KeyboardEvent & { target: HTMLButtonElement };
@@ -61,3 +66,4 @@ export class HamsterSearchComponent implements OnInit {
   }
 
 }
+//#endregion

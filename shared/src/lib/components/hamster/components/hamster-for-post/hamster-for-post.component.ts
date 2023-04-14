@@ -1,3 +1,4 @@
+//#region @browser
 import { Component, Input, OnInit } from '@angular/core';
 import { HamsterComponent } from '../../hamster.component';
 
@@ -8,6 +9,5 @@ import { HamsterComponent } from '../../hamster.component';
 })
 export class HamsterComponentForPost extends HamsterComponent implements OnInit {
 
-
-
 }
+//#endregion

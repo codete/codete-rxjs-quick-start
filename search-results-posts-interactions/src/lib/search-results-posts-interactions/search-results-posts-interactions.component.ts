@@ -1,3 +1,4 @@
+//#region @browser
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { combineLatestAll, combineLatestWith, firstValueFrom, share, Subject, Subscription, take, takeUntil, takeWhile, tap } from 'rxjs';
@@ -53,3 +54,4 @@ export class SearchResultsPostsInteractionsComponent implements OnInit {
   }
 
 }
+//#endregion

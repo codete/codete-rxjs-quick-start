@@ -1,3 +1,4 @@
+//#region @browser
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StartComponent } from './start.component';
@@ -23,3 +24,4 @@ const routes: Routes = [
   exports: [StartComponent]
 })
 export class StartModule { }
+//#endregion

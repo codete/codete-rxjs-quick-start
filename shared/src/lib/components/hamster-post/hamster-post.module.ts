@@ -1,3 +1,4 @@
+//#region @browser
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HamsterPostComponent } from './hamster-post.component';
@@ -14,3 +15,4 @@ import { HamsterModule } from '../hamster/hamster.module';
   exports: [HamsterPostComponent],
 })
 export class HamsterPostModule { }
+//#endregion

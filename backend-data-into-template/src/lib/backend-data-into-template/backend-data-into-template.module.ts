@@ -1,3 +1,4 @@
+//#region @browser
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BackendDataIntoTemplateComponent } from './backend-data-into-template.component';
@@ -22,3 +23,4 @@ const routes: Routes = [
   declarations: [BackendDataIntoTemplateComponent]
 })
 export class BackendDataIntoTemplateModule { }
+//#endregion

@@ -1,3 +1,4 @@
+//#region @browser
 import { Component, OnInit } from '@angular/core';
 import { Topic } from '@codete-rxjs-quick-start/shared';
 
@@ -31,3 +32,4 @@ export class StartComponent implements OnInit {
   }
 
 }
+//#endregion

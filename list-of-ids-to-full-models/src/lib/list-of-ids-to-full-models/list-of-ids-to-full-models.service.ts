@@ -1,3 +1,4 @@
+//#region @browser
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Hamster, HamsterOwner } from '@codete-rxjs-quick-start/shared';
@@ -15,3 +16,4 @@ export class ListOfIdsToFullModelsService {
   }
 
 }
+//#endregion

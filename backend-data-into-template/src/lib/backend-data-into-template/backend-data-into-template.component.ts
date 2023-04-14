@@ -1,3 +1,4 @@
+//#region @browser
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Author, Book } from '@codete-rxjs-quick-start/shared';
@@ -31,3 +32,4 @@ export class BackendDataIntoTemplateComponent implements OnInit {
   }
 
 }
+//#endregion
