@@ -21,7 +21,6 @@ const routes: Routes = [
     MaterialModule,
   ],
   declarations: [StartComponent],
-  exports: [StartComponent]
 })
 export class StartModule { }
 //#endregion

@@ -20,7 +20,7 @@ export class HamsterPost extends Hamster {
   ctrl: HamsterPostController;
 
   //#region @websql
-  @Firedev.Orm.Column.Custom({ type: 'integer' })
+  @Firedev.Orm.Column.Custom({ type: 'integer', primary: true })
   //#endregion
   loveLevel: number;
 

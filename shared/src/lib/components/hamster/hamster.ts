@@ -19,7 +19,7 @@ export class Hamster extends Firedev.Base.Entity<any> {
 
 
   //#region @websql
-  @Firedev.Orm.Column.Generated()
+  @Firedev.Orm.Column.Custom({ type: 'integer', primary: true})
   //#endregion
   id: number;
 
