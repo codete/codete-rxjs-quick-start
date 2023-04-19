@@ -15,8 +15,11 @@ import {
 import { FiredevGithubForkMeCornerModule } from 'firedev-ui';
 import { NgModule, NgZone, ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import { NavigationEnd, Router } from "@angular/router";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { filter, map, Subject, takeUntil, share } from "rxjs";
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
 //#endregion
 //#endregion
@@ -61,6 +64,25 @@ export class MainComponent implements OnInit {
     private router: Router,
   ) { }
 
+  destroyed$ = new Subject<void>();
+  useOpenLayout$ = this.router.events.pipe(
+    filter(val => {
+      return val instanceof NavigationEnd;
+    }),
+    map(v => {
+      return (v as NavigationEnd).url;
+    }),
+    map(u => {
+      return u === '/';
+    }),
+    takeUntil(this.destroyed$),
+    share()
+  );
+
+  useCloseLayout$ = this.useOpenLayout$.pipe(
+    map(v => !v)
+  );
+
   async ngOnInit() {
     Firedev.initNgZone(this.ngZone);
     await start();
@@ -76,6 +98,8 @@ export class MainComponent implements OnInit {
 //#region main module
 @NgModule({
   imports: [
+    CommonModule,
+    MatCardModule,
     FiredevGithubForkMeCornerModule,
     RouterModule.forRoot(routes, {
       useHash: true,

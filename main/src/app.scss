@@ -15,6 +15,9 @@ body {
   box-sizing: border-box;
 }
 
+$maxWidth: 700px;
+$headerLogoSize: 100px;
+
 .bg-image {
   position: absolute;
   /* The image used */
@@ -36,30 +39,47 @@ body {
   background-size: cover;
 }
 
-/* Position text in the middle of the page/image */
-.bg-text {
-  overflow: hidden !important;
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  // border: 3px solid #f1f1f1;
+
+@mixin baseLayout {
   position: relative;
-  top: 100px;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+
+.bg-text {
+  @include baseLayout;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-weight: bold;
+  top: $headerLogoSize;
   z-index: 2;
-  width: calc(100% - 10px);
-  max-width: 1000px;
-  // height: 50%;
+  width: calc(100% - 10px - 2 * 20px);
+  max-width: $maxWidth;
   padding: 20px;
   text-align: center;
   overflow-x: auto;
   overflow-y: scroll;
   border-radius: 10px;
+
 }
+
+.bg-text-open {
+  @include baseLayout;
+  max-width: $maxWidth;
+  top: $headerLogoSize;
+  width: calc(100% - 10px);
+  height: calc(100% - $headerLogoSize - 20px);
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  > mat-card {
+    background-color: #0006;
+    color: white;
+  }
+}
+
 
 .bg-logo {
   position: absolute;
@@ -130,8 +150,9 @@ mat-card-subtitle {
 footer {
   position: absolute;
   z-index: 10;
-  left: calc(50% - 50px);
   bottom: 5px;
+  width: 100%;
+  text-align: center;
   color: white;
   font-size: 10px;
 }
