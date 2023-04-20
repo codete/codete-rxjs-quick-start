@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1681721442611,
+  "timestamp": 1682008337335,
   "index": "/codete-rxjs-quick-start/index.html",
   "assetGroups": [
     {
@@ -11,17 +11,17 @@
         "ignoreVary": true
       },
       "urls": [
-        "/codete-rxjs-quick-start/227.507f8c50b08cb215.js",
-        "/codete-rxjs-quick-start/333.b5d2fea0bcc678ab.js",
-        "/codete-rxjs-quick-start/592.b8f43b3c1db73a15.js",
-        "/codete-rxjs-quick-start/673.4a5dfd1df982820d.js",
-        "/codete-rxjs-quick-start/782.bf4c5beb6fbaa8c6.js",
+        "/codete-rxjs-quick-start/227.948b64040e30a8f3.js",
+        "/codete-rxjs-quick-start/333.723851f79b26a4b8.js",
+        "/codete-rxjs-quick-start/592.7f93abee651f0669.js",
+        "/codete-rxjs-quick-start/673.d2c82c6f9b2e5a90.js",
+        "/codete-rxjs-quick-start/782.13599908ef5b60eb.js",
         "/codete-rxjs-quick-start/favicon.ico",
         "/codete-rxjs-quick-start/index.html",
-        "/codete-rxjs-quick-start/main.f5c9c7bd64f0f9ed.js",
+        "/codete-rxjs-quick-start/main.349e63c2f59acbbe.js",
         "/codete-rxjs-quick-start/manifest.webmanifest",
-        "/codete-rxjs-quick-start/polyfills.7e87936c017d51a3.js",
-        "/codete-rxjs-quick-start/runtime.8595fe8886195ea4.js",
+        "/codete-rxjs-quick-start/polyfills.c5db63d554f91308.js",
+        "/codete-rxjs-quick-start/runtime.a3a5f08cb07dd8d3.js",
         "/codete-rxjs-quick-start/styles.106adc5fefc24396.css"
       ],
       "patterns": []
@@ -59,16 +59,16 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/codete-rxjs-quick-start/227.507f8c50b08cb215.js": "69e0c2038c701f529036a7d5490508683aca3018",
-    "/codete-rxjs-quick-start/333.b5d2fea0bcc678ab.js": "7e9187b73b3524894b439935c0fd3966c8b11cfd",
-    "/codete-rxjs-quick-start/592.b8f43b3c1db73a15.js": "9e0095a7af049f5c4433c60705b97d85f6ef1bd9",
-    "/codete-rxjs-quick-start/673.4a5dfd1df982820d.js": "3dd1d75607d33ce0d70508cf6955d5e5d37fdf0d",
-    "/codete-rxjs-quick-start/782.bf4c5beb6fbaa8c6.js": "ab770920721457deac17928f64ed0b033db6c019",
+    "/codete-rxjs-quick-start/227.948b64040e30a8f3.js": "d2c5880c8c3f9cc8a8e006241e5844c9c1a5d0dd",
+    "/codete-rxjs-quick-start/333.723851f79b26a4b8.js": "da91c85e291e10d4a68d0b6206f07bc5687f200d",
+    "/codete-rxjs-quick-start/592.7f93abee651f0669.js": "6169d5d9d335ae29f85d1c263d0d58e8c7932382",
+    "/codete-rxjs-quick-start/673.d2c82c6f9b2e5a90.js": "3d45cd39deed177a75f41c9c137973e2ad7c2414",
+    "/codete-rxjs-quick-start/782.13599908ef5b60eb.js": "99e4df48ad58a43fc5832e6dc72c6bd3112e2eec",
     "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--main/backend-data-into-template.jpeg": "fbfd3c8106e374ed71ea3bae3a23b849156fce35",
     "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--main/background1.webp": "7e87dd1e25172e898f8871bdfe7adac0f855ea2f",
-    "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--main/heart.svg": "638f0ab170631c85414014ec00eb4d784b00bdf6",
+    "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--main/heart.svg": "85bb7327ec5d5c91e04924e57e459b2800a0a799",
     "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--main/logo.jpeg": "ad70c5196061d15de2eeb64acb7f13a6c2fececd",
-    "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--main/logo2.svg": "701385c7ff93c863438984738b582aa108fd3240",
+    "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--main/logo2.svg": "4ba265f439b762de81f4bd723fffeb1e144073f6",
     "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--main/rxjs.png": "7f3f6f76493ba99a8a54a89d031868eb08d51646",
     "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--shared/hamsters/1000.png": "ad7b8b089aeb60f16c236ee9a818618217488668",
     "/codete-rxjs-quick-start/assets/assets-for/codete-rxjs-quick-start--shared/hamsters/1001.png": "e03c8c37722f8f751799af30ea050f2c89d6afe0",
@@ -84,11 +84,11 @@
     "/codete-rxjs-quick-start/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/codete-rxjs-quick-start/assets/sql-wasm.wasm": "fcc42ce03c2b5af20e90acc2b75263acc502d736",
     "/codete-rxjs-quick-start/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/codete-rxjs-quick-start/index.html": "a04f9b5a0fe95f303e83aeed3391537a7686fefa",
-    "/codete-rxjs-quick-start/main.f5c9c7bd64f0f9ed.js": "5cc12260d2db80de4f3fc163e1496d712b604fcc",
+    "/codete-rxjs-quick-start/index.html": "bf6022ddad3ec8912b299bdb4d71aa8d881adc06",
+    "/codete-rxjs-quick-start/main.349e63c2f59acbbe.js": "49a07ed968910c2e2b17330263399e7cbc41b3a6",
     "/codete-rxjs-quick-start/manifest.webmanifest": "7c4bfaa8dbaba246ac0990c4718289fc5e4ea214",
-    "/codete-rxjs-quick-start/polyfills.7e87936c017d51a3.js": "c2fb88d0ff48642e6d1c15c4158895ab0c85c99b",
-    "/codete-rxjs-quick-start/runtime.8595fe8886195ea4.js": "179fdc1fbf79440bcb938d98bbdd48ff9f36cb81",
+    "/codete-rxjs-quick-start/polyfills.c5db63d554f91308.js": "8a769a2ed07533f527e2dedbfd3a5e87134dcaf7",
+    "/codete-rxjs-quick-start/runtime.a3a5f08cb07dd8d3.js": "3dd8d1a3cba867af3140b77e8796601f4613df49",
     "/codete-rxjs-quick-start/styles.106adc5fefc24396.css": "aa07ccf2b1035fdd3bf6d0314bf46de212c3e2e9"
   },
   "navigationUrls": [
