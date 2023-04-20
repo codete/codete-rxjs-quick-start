@@ -2,7 +2,7 @@
   <app-hamster-for-post [hamster]="hamster"></app-hamster-for-post>
   <div class="love-level"
        *ngIf="hamster">
-    <span>love level {{ hamster.loveLevel || 0 }}% </span>
+     &nbsp;&nbsp;<span>love level {{ hamster.loveLevel || 0 }}% </span>
     <mat-progress-bar mode="determinate"
                       [value]="hamster.loveLevel"></mat-progress-bar>
   </div>
