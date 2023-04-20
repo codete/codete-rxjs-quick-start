@@ -7,7 +7,9 @@
     ],
     "includeAsDev": [],
     "includeOnly": [],
-    "dependencies": {}
+    "dependencies": {
+      'ngx-scrollbar': 'latest',
+    }
   },
   "linkedProjects": [],
   "smartContainerBuildTarget": "",

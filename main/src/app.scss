@@ -59,8 +59,7 @@ $headerLogoSize: 100px;
   max-width: $maxWidth;
   padding: 20px;
   text-align: center;
-  overflow-x: auto;
-  overflow-y: scroll;
+  overflow: hidden;
   border-radius: 10px;
 
 }
@@ -74,10 +73,24 @@ $headerLogoSize: 100px;
   overflow-x: hidden;
   overflow-y: auto;
 
-  > mat-card {
-    background-color: #0006;
-    color: white;
+  >ng-scrollbar {
+    background: transparent;
+
+    >div {
+      >div {
+        >div {
+          >div {
+            >mat-card {
+              background-color: #0006;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+
   }
+
 }
 
 

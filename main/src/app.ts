@@ -20,6 +20,7 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 import { filter, map, Subject, takeUntil, share } from "rxjs";
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { NgScrollbarModule } from 'ngx-scrollbar';
 
 //#endregion
 //#endregion
@@ -101,6 +102,7 @@ export class MainComponent implements OnInit {
     CommonModule,
     MatCardModule,
     FiredevGithubForkMeCornerModule,
+    NgScrollbarModule,
     RouterModule.forRoot(routes, {
       useHash: true,
       preloadingStrategy: PreloadAllModules,

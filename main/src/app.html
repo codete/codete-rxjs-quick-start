@@ -19,9 +19,11 @@
 
 <ng-container *ngIf="useCloseLayout$ | async">
   <div class="bg-text-open">
-    <mat-card>
-    <ng-container [ngTemplateOutlet]="content"></ng-container>
-    </mat-card>
+    <ng-scrollbar>
+      <mat-card>
+        <ng-container [ngTemplateOutlet]="content"></ng-container>
+      </mat-card>
+    </ng-scrollbar>
   </div>
 </ng-container>
 
