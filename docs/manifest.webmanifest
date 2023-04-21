@@ -1,11 +1,11 @@
 {
-  "name": "Main",
-  "short_name": "main",
+  "name": "Codete RxJs Quick Start",
+  "short_name": "codete-rxjs-start",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
-  "start_url": "https://darekf77.github.io/codete-rxjs-quick-start/",
+  "start_url": "/codete-rxjs-quick-start/",
   "icons": [
     {
       "src": "assets/icons/icon-128x128.png",
