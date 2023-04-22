@@ -1,0 +1,7 @@
+{
+  "build": true,
+  "prod": true,
+  "websql": true,
+  "projName": "main",
+  "children": []
+}
