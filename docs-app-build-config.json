@@ -5,14 +5,7 @@
   "prod": true,
   "websql": true,
   "projName": "main",
-  "children": [
-    {
-      "build": true,
-      "prod": true,
-      "websql": false,
-      "projName": "shared"
-    }
-  ]
+  "children": []
 }
 
     
