@@ -38,7 +38,6 @@ export class BackendDataIntoTemplateComponent implements OnInit {
       map(authors => {
         return authors.filter(({ books }) => books.length >= 2)
       }),
-      tap(console.log)
     );
   }
 

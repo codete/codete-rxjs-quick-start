@@ -17,7 +17,7 @@ import { NgModule, NgZone, ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from "@angular/router";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
-import { filter, map, Subject, takeUntil, share } from "rxjs";
+import { filter, map, Subject, takeUntil, share, tap } from "rxjs";
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { NgScrollbarModule } from 'ngx-scrollbar';
@@ -59,38 +59,37 @@ const routes: Routes = [
   styleUrls: ['./app.scss'],
   templateUrl: './app.html',
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
+  useOpenLayout = true;
+  destroyed$ = new Subject<void>();
+
+
   constructor(
     private ngZone: NgZone,
     private router: Router,
-  ) { }
-
-  destroyed$ = new Subject<void>();
-  useOpenLayout$ = this.router.events.pipe(
-    filter(val => {
-      return val instanceof NavigationEnd;
-    }),
-    map(v => {
-      return (v as NavigationEnd).url;
-    }),
-    map(u => {
-      return u === '/';
-    }),
-    takeUntil(this.destroyed$),
-    share()
-  );
-
-  useCloseLayout$ = this.useOpenLayout$.pipe(
-    map(v => !v)
-  );
-
-  async ngOnInit() {
-    Firedev.initNgZone(this.ngZone);
-    await start();
+  ) {
+    this.router.events.pipe(
+      filter(val => {
+        return val instanceof NavigationEnd;
+      }),
+      map(v => {
+        return (v as NavigationEnd).url;
+      }),
+      map(u => {
+        return u !== '/';
+      }),
+      tap((useOpenLayout) => {
+        this.useOpenLayout = useOpenLayout;
+      })
+    );
   }
 
   gotoroot() {
     this.router.navigateByUrl('/');
+  }
+
+  ngOnInit(): void {
+
   }
 
 }
