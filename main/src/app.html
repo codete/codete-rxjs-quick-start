@@ -17,19 +17,13 @@
   <router-outlet></router-outlet>
 </ng-template>
 
-<ng-container *ngIf="!useOpenLayout">
+<ng-container>
   <div class="bg-text-open">
     <ng-scrollbar>
       <mat-card>
         <ng-container [ngTemplateOutlet]="content"></ng-container>
       </mat-card>
     </ng-scrollbar>
-  </div>
-</ng-container>
-
-<ng-container *ngIf="useOpenLayout">
-  <div class="bg-text">
-    <ng-container [ngTemplateOutlet]="content"></ng-container>
   </div>
 </ng-container>
 

@@ -60,7 +60,7 @@ const routes: Routes = [
   templateUrl: './app.html',
 })
 export class MainComponent {
-  useOpenLayout = true;
+  useOpenLayout = false;
   destroyed$ = new Subject<void>();
 
 
@@ -68,20 +68,25 @@ export class MainComponent {
     private ngZone: NgZone,
     private router: Router,
   ) {
-    this.router.events.pipe(
+
+    router.events.pipe(
+      takeUntil(this.destroyed$),
       filter(val => {
         return val instanceof NavigationEnd;
       }),
       map(v => {
         return (v as NavigationEnd).url;
       }),
-      map(u => {
-        return u !== '/';
+      map(urlPart => {
+        console.log({
+          urlPart
+        })
+        return urlPart !== '/';
       }),
       tap((useOpenLayout) => {
         this.useOpenLayout = useOpenLayout;
       })
-    );
+    ).subscribe(console.log)
   }
 
   gotoroot() {
@@ -90,6 +95,11 @@ export class MainComponent {
 
   ngOnInit(): void {
 
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next(void 0);
+    this.destroyed$.unsubscribe();
   }
 
 }
