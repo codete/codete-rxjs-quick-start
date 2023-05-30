@@ -2,15 +2,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HamsterPost } from './hamster-post';
 
-// @ts-ignore
-// import * as jsonHamste from '../../../assets/hamsters/test.json';
-// console.log({ first: jsonHamste })
-
-
-// @ts-ignore
-// import * as jsonHamste2 from '/shared/src/assets/hamsters/test.json';
-// console.log({ second: jsonHamste2 })
-
 @Component({
   selector: 'app-hamster-post',
   templateUrl: './hamster-post.component.html',
