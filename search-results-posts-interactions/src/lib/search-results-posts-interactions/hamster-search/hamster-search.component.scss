@@ -1,26 +1,38 @@
 mat-form-field {
-  width: 80%;
-  max-width: 400px;
+  width: 100%;
 }
 
 mat-card {
-  display: inline-block;
+  display       : inline-block;
   vertical-align: text-top;
 }
 
-.main {
-  width: calc(60% - 20px);
-  margin: 10px;
-}
-
 .side {
-  width: calc(40% - 20px);
-  margin: 10px;
+  background-color: lightgrey;
+  h4 {
+    text-indent: 20px;
+    padding-top: 10px;
+  }
   ul {
-    width: 100%;
-    min-height: 100px;
-    max-height: 200px;
+    width     : 100%;
+    min-height: 70px;
+    max-height: 150px;
     overflow-y: auto;
     overflow-x: hidden;
   }
+}
+
+.hamsters {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  app-hamster {
+    display: flex;
+  }
+}
+
+
+span {
+  display: block;
+  padding: 10px;
 }

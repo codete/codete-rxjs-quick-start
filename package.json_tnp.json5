@@ -27,7 +27,7 @@
     "ugly": false,
     "includeNodeModules": false
   },
-  "version": "v3",
+  "version": "v4",
   "type": "container",
   "smart": true,
   "monorepo": true

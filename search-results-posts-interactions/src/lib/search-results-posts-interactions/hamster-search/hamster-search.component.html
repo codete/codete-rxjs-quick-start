@@ -1,23 +1,6 @@
-<mat-form-field class="example-full-width"
-                appearance="fill">
-  <mat-label>Type name of your little, chubby friend</mat-label>
-  <input matInput
-         #search>
-</mat-form-field>
-
-
-<mat-card class="main">
-  <div *ngIf="searchResults$ | async; else loadingDataTemplate; let hamsters">
-    <ng-container *ngIf="hamsters.length > 0; else zeroHamsterTemplate">
-      <ng-container *ngFor="let hamster of hamsters">
-        <app-hamster [hamster]="hamster"></app-hamster>
-      </ng-container>
-    </ng-container>
-  </div>
-  <ng-template #zeroHamsterTemplate>
-    zero hamsters to show
-  </ng-template>
-</mat-card>
+<ng-template #zeroHamsterTemplate>
+  zero hamsters to show
+</ng-template>
 
 <ng-template #loadingDataTemplate>
   <ng-container *ngIf="(typedWords$ | async); else elseTemplate; let typedWords">
@@ -26,15 +9,47 @@
           [ngTemplateOutlet]="elseTemplate"> </span>
   </ng-container>
   <ng-template #elseTemplate>
-    please type hamster name in the input above
+    <span>please type hamster name in the input above</span>
   </ng-template>
 </ng-template>
 
 
+<mat-form-field class="example-full-width"
+                appearance="fill">
+  <mat-label>Type name of your little, chubby friend</mat-label>
+  <input matInput
+         #search>
+</mat-form-field>
 
-<mat-card class="side">
-  <h4 class="title">Already typed words:</h4>
-  <ul #side>
-    <li *ngFor="let word of (typedWords$ | async)"> {{ word }} </li>
-  </ul>
-</mat-card>
+<ng-template #typed>
+  <div class="side">
+    <h4 class="title">Already typed words:</h4>
+    <ul #side>
+      <li *ngFor="let word of (typedWords$ | async)"> {{ word }} </li>
+    </ul>
+  </div>
+</ng-template>
+
+<ng-template #hamsters>
+  <div class="hamsters" *ngIf="searchResults$ | async; else loadingDataTemplate; let hamsters">
+    <ng-container *ngIf="hamsters.length > 0; else zeroHamsterTemplate">
+      <app-hamster *ngFor="let hamster of hamsters"
+                   [hamster]="hamster"></app-hamster>
+    </ng-container>
+  </div>
+</ng-template>
+
+<columns-container>
+  <column grow>
+    <ng-container [ngTemplateOutlet]="hamsters"></ng-container>
+  </column>
+  <column width="200"
+          hideMobile>
+    <ng-container [ngTemplateOutlet]="typed"></ng-container>
+  </column>
+</columns-container>
+<columns-container>
+  <column showMobile  grow>
+    <ng-container [ngTemplateOutlet]="typed"></ng-container>
+  </column>
+</columns-container>

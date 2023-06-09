@@ -11,7 +11,7 @@ body {
 }
 
 
-$maxWidth: 700px;
+$maxWidth: 770px;
 $headerLogoSize: 100px;
 
 .bg-image {
@@ -77,8 +77,8 @@ $headerLogoSize: 100px;
         >div {
           >div {
             >mat-card {
+              margin: 10px;
               background-color: #0006;
-              color: white;
             }
           }
         }
