@@ -23,10 +23,13 @@ mat-card {
 }
 
 .hamsters {
+  margin: 10px;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
   app-hamster {
+    margin-bottom: 10px;
     display: flex;
   }
 }

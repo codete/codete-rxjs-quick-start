@@ -1,7 +1,8 @@
-<ng-container *ngFor="let hamster of (hamsters$ | async)">
-  <app-hamster-post [hamster]="hamster"
-                    (loveButton)="loveClicking$.next(hamster)"></app-hamster-post>
-</ng-container>
-
+<div class="hamsters">
+  <ng-container *ngFor="let hamster of (hamsters$ | async)">
+    <app-hamster-post [hamster]="hamster"
+                      (loveButton)="loveClicking$.next(hamster)"></app-hamster-post>
+  </ng-container>
+</div>
 <br>
 <br>
